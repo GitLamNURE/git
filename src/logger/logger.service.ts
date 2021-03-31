@@ -1,8 +1,11 @@
 import { LoggerService as NestLoggerService } from '@nestjs/common';
 import * as fs from 'fs';
+import * as moment from 'moment';
 
 export class LoggerService implements NestLoggerService {
   getFullMessage(message: string, context?: any) {
+    message =
+      'UTC: ' + moment().utc().format('MM.DD.YYYY HH:mm:ss') + '\n' + message;
     if (context) {
       message += '\nContext: ' + JSON.stringify(context, null, 2);
     }

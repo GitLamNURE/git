@@ -3,8 +3,7 @@ import { HttpModule, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ApiModule } from './api/api.module';
-import { AuthModule } from './auth/auth.module';
-import { LoggerService } from './logger.service';
+import { LoggerService } from './logger/logger.service';
 
 @Module({
   imports: [
@@ -12,7 +11,6 @@ import { LoggerService } from './logger.service';
       validateStatus: () => true,
     }),
     ApiModule,
-    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService, LoggerService],

@@ -17,6 +17,6 @@ const UserTokensSchema = new Schema({
 });
 
 export const UserTokens: Model<IUserTokens> = model(
-  'Usertokens',
+  'UserTokens',
   UserTokensSchema,
 );

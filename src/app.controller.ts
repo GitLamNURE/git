@@ -1,4 +1,9 @@
-import { Controller } from '@nestjs/common';
+import { All, Controller } from '@nestjs/common';
 
 @Controller('git')
-export class AppController {}
+export class AppController {
+  @All('ping')
+  ping() {
+    return 'Hello! ;)';
+  }
+}

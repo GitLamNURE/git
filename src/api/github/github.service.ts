@@ -1,7 +1,7 @@
 import { HttpService, Injectable } from '@nestjs/common';
 
 import { config } from '../../config';
-import { LoggerService } from '../../logger.service';
+import { LoggerService } from '../../logger/logger.service';
 import { UserTokens } from '../../models/user-tokens.entity';
 
 @Injectable()

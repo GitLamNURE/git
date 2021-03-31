@@ -1,6 +1,6 @@
 import { HttpModule, Module } from '@nestjs/common';
 
-import { LoggerService } from '../logger.service';
+import { LoggerService } from '../logger/logger.service';
 import { ApiController } from './api.controller';
 import { ApiService } from './api.service';
 import { GithubController } from './github/github.controller';

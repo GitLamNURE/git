@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 
-import { LoggerService } from '../logger.service';
+import { LoggerService } from '../logger/logger.service';
 import { GithubService } from './github/github.service';
 
 @Injectable()
