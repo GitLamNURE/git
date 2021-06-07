@@ -16,7 +16,7 @@ import { CurrentUser } from '../auth/current-user.decorator';
 import { CurrentUserDto } from '../auth/dto/current-user.dto';
 import { GetRepositoryBranchesDto } from './dto/get-repository-branches.dto';
 
-@Controller('git')
+@Controller()
 export class ApiController {
   constructor(private apiService: ApiService) {}
 

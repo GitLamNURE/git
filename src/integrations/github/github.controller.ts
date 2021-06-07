@@ -7,7 +7,7 @@ import { CurrentUserDto } from '../../auth/dto/current-user.dto';
 import { CallbackDto } from './dto/callback.dto';
 import { ApiBearerAuth } from '@nestjs/swagger';
 
-@Controller('git/github')
+@Controller('github')
 export class GithubController {
   constructor(private githubService: GithubService) {}
 

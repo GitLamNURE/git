@@ -14,6 +14,8 @@ async function bootstrap() {
 
   const app = await NestFactory.create(AppModule);
 
+  app.setGlobalPrefix('git');
+
   const swaggerConfig = new DocumentBuilder()
     .setTitle('GitLam git service')
     .addBearerAuth()
