@@ -1,18 +1,18 @@
 import { HttpModule, Module } from '@nestjs/common';
 
-import { LoggerService } from '../logger/logger.service';
 import { ApiController } from './api.controller';
 import { ApiService } from './api.service';
-import { GithubController } from './github/github.controller';
-import { GithubService } from './github/github.service';
+import { IntegrationsModule } from 'src/integrations/integrations.module';
 
 @Module({
   imports: [
     HttpModule.register({
       validateStatus: () => true,
     }),
+    IntegrationsModule,
   ],
-  controllers: [GithubController, ApiController],
-  providers: [GithubService, ApiService, LoggerService],
+  controllers: [ApiController],
+  providers: [ApiService],
+  exports: [ApiService],
 })
 export class ApiModule {}

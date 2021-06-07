@@ -1,9 +1,9 @@
 import { HttpModule, Module } from '@nestjs/common';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ApiModule } from './api/api.module';
-import { LoggerService } from './logger/logger.service';
+import { LoggerModule } from './logger/logger.module';
+import { UserTokensModule } from './user-tokens/user-tokens.module';
+import { IntegrationsModule } from './integrations/integrations.module';
 
 @Module({
   imports: [
@@ -11,8 +11,9 @@ import { LoggerService } from './logger/logger.service';
       validateStatus: () => true,
     }),
     ApiModule,
+    LoggerModule,
+    IntegrationsModule,
+    UserTokensModule,
   ],
-  controllers: [AppController],
-  providers: [AppService, LoggerService],
 })
 export class AppModule {}
