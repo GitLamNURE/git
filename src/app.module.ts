@@ -4,6 +4,7 @@ import { ApiModule } from './api/api.module';
 import { LoggerModule } from './logger/logger.module';
 import { UserTokensModule } from './user-tokens/user-tokens.module';
 import { IntegrationsModule } from './integrations/integrations.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { IntegrationsModule } from './integrations/integrations.module';
       validateStatus: () => true,
     }),
     ApiModule,
+    AuthModule,
     LoggerModule,
     IntegrationsModule,
     UserTokensModule,

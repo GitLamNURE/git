@@ -8,6 +8,7 @@ import {
   Query,
   UseGuards,
 } from '@nestjs/common';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
 import { AuthGuard } from '../auth/auth.guard';
 import { ApiService } from './api.service';
@@ -26,6 +27,7 @@ export class ApiController {
 
   @Get('vcs-signin-link')
   @UseGuards(AuthGuard)
+  @ApiBearerAuth()
   getVCSSignInLink(@Query('vcs') vcs: string) {
     if (!vcs) {
       throw new BadRequestException('VCS name is empty');
@@ -38,12 +40,14 @@ export class ApiController {
 
   @Post('repositories')
   @UseGuards(AuthGuard)
+  @ApiBearerAuth()
   async getRepositories(@CurrentUser() user: CurrentUserDto) {
     return this.apiService.getUserRepositories(user.id);
   }
 
   @Post('repository/branches')
   @UseGuards(AuthGuard)
+  @ApiBearerAuth()
   async getRepositoryBranches(
     @CurrentUser() user: CurrentUserDto,
     @Body() dto: GetRepositoryBranchesDto,
