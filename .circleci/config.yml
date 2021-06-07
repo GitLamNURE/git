@@ -1,0 +1,29 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: node:latest
+    working_directory: ~/client
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "3b:39:41:8d:fd:68:a4:28:2a:2d:8f:b1:33:7f:e4:63"
+      - checkout
+      - run:
+          name: Setup SSH
+          command: |
+            chmod 777 ./.circleci/deploy.sh
+            ssh-keyscan $SERVER_IP >> ~/.ssh/known_hosts
+      - run:
+          name: Deploy
+          command: ./.circleci/deploy.sh
+
+workflows:
+  push:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
