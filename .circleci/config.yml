@@ -4,16 +4,17 @@ jobs:
   build:
     docker:
       - image: node:latest
-    working_directory: ~/client
+    working_directory: ~/git
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "3b:39:41:8d:fd:68:a4:28:2a:2d:8f:b1:33:7f:e4:63"
+            - '3b:39:41:8d:fd:68:a4:28:2a:2d:8f:b1:33:7f:e4:63'
       - checkout
       - run:
           name: Setup SSH
           command: |
             chmod 777 ./.circleci/deploy.sh
+            echo $SERVER_IP
             ssh-keyscan $SERVER_IP >> ~/.ssh/known_hosts
       - run:
           name: Deploy
