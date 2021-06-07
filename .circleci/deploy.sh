@@ -1,7 +1,7 @@
 #!/bin/bash
 
-git remote add production ssh://root@134.209.203.56$SERVER_PROJECT_DIRECTORY
+git remote add production ssh://root@$SERVER_IP$SERVER_PROJECT_DIRECTORY
 
 git push --force production master
 
-ssh root@134.209.203.56 "cd $SERVER_PROJECT_DIRECTORY && npm install && sudo systemctl restart gitlam_git.service && exit"
+ssh root@$SERVER_IP "cd $SERVER_PROJECT_DIRECTORY && npm install && systemctl restart gitlam_git.service && exit"
