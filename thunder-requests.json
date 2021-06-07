@@ -1,0 +1,97 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "GitLam",
+  "dateExported": "2021-04-28T08:50:25.077Z",
+  "version": "1.0",
+  "requests": [
+    {
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "colId": "671a46e0-819d-49dd-8227-c5a59db77778",
+      "name": "Sign up",
+      "url": "{{server}}/auth/signup",
+      "method": "POST",
+      "modified": "2021-04-28T08:38:55.369Z",
+      "created": "2021-04-28T08:38:55.369Z",
+      "_id": "597babcc-3b46-4736-b69a-0c38d42f0b85",
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"name\": \"lol\",\n    \"email\": \"lol@kek.com\",\n    \"password\": \"kek\"\n}"
+      }
+    },
+    {
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "colId": "671a46e0-819d-49dd-8227-c5a59db77778",
+      "name": "Login",
+      "url": "{{auth_server}}/auth/login",
+      "method": "POST",
+      "modified": "2021-04-28T08:47:45.252Z",
+      "created": "2021-04-28T08:38:55.371Z",
+      "_id": "28915cf8-959a-4a80-b42b-76a8273c7238",
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"email\": \"lol@kek.com\",\n    \"password\": \"kek\"\n}"
+      },
+      "tests": []
+    },
+    {
+      "headers": [],
+      "colId": "671a46e0-819d-49dd-8227-c5a59db77778",
+      "name": "Ping",
+      "url": "{{server}}/git/ping",
+      "method": "GET",
+      "modified": "2021-04-28T08:48:33.962Z",
+      "created": "2021-04-28T08:38:55.374Z",
+      "_id": "c163b9ba-89c4-423e-a4bb-d70fd68be4dc",
+      "tests": []
+    },
+    {
+      "headers": [],
+      "colId": "671a46e0-819d-49dd-8227-c5a59db77778",
+      "name": "Get sign in link",
+      "url": "{{server}}/git/vcs-signin-link?vcs=github",
+      "method": "GET",
+      "modified": "2021-04-28T08:49:05.453Z",
+      "created": "2021-04-28T08:38:55.375Z",
+      "_id": "b046403b-1628-4a2c-821e-67ae74b8845c",
+      "auth": {
+        "type": "bearer",
+        "bearer": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5MjNiMGUzNzA3NThjOTQ0OWI2NTkifQ.D6OGpxRlbiBpnhI9TIYmo62D1OgMXbByNNjPp9C1DAKXkP9z9rSGbSdnqcX404nCboMefsGmo_5L8ubDkvr9zw"
+      },
+      "tests": []
+    },
+    {
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "colId": "671a46e0-819d-49dd-8227-c5a59db77778",
+      "name": "GitHub callback",
+      "url": "{{server}}/git/github/callback",
+      "method": "POST",
+      "modified": "2021-04-28T08:49:20.109Z",
+      "created": "2021-04-28T08:38:55.376Z",
+      "_id": "006ea050-6f81-4792-896a-e4e4befcde74",
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"code\": \"3fd51f1a0c0fc84b6e97\"\n}"
+      },
+      "auth": {
+        "type": "bearer",
+        "bearer": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5MjNiMGUzNzA3NThjOTQ0OWI2NTkifQ.D6OGpxRlbiBpnhI9TIYmo62D1OgMXbByNNjPp9C1DAKXkP9z9rSGbSdnqcX404nCboMefsGmo_5L8ubDkvr9zw"
+      },
+      "tests": []
+    },
+    {
+      "headers": [],
+      "colId": "671a46e0-819d-49dd-8227-c5a59db77778",
+      "name": "Get user repositories",
+      "url": "{{server}}/git/repositories",
+      "method": "POST",
+      "modified": "2021-04-28T08:49:26.372Z",
+      "created": "2021-04-28T08:38:55.376Z",
+      "_id": "c99f1499-1c8c-47f4-8a3b-34c415b73a78",
+      "auth": {
+        "type": "bearer",
+        "bearer": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ5MjNiMGUzNzA3NThjOTQ0OWI2NTkifQ.D6OGpxRlbiBpnhI9TIYmo62D1OgMXbByNNjPp9C1DAKXkP9z9rSGbSdnqcX404nCboMefsGmo_5L8ubDkvr9zw"
+      },
+      "tests": []
+    }
+  ]
+}
